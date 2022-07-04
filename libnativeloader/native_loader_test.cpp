@@ -34,7 +34,7 @@ using ::testing::Eq;
 using ::testing::MatchesRegex;
 using ::testing::NotNull;
 using ::testing::StrEq;
-using internal::ConfigEntry;
+using internal::ConfigEntry;  // NOLINT - ConfigEntry is actually used
 using internal::ParseApexLibrariesConfig;
 using internal::ParseConfig;
 
