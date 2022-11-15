@@ -176,6 +176,15 @@ art_cc_defaults {
         "libnativehelper_header_only",
     ],
 
+    target: {
+        android: {
+            lto: {
+                thin: true,
+            },
+        },
+    },
+    whole_program_vtables: true, // Requires LTO
+
     export_include_dirs: ["."],
     // Not using .map.txt because this is an internal API
     version_script: "libart-compiler.map",
@@ -245,6 +254,8 @@ art_cc_library {
             },
         },
     },
+    whole_program_vtables: true, // Requires LTO
+
     apex_available: [
         "com.android.art",
         "com.android.art.debug",
@@ -305,6 +316,15 @@ art_cc_library {
         // `libartd-disassembler.so`.
         "libartd-disassembler",
     ],
+
+    target: {
+        android: {
+            lto: {
+                thin: true,
+            },
+        },
+    },
+    whole_program_vtables: true, // Requires LTO
 
     apex_available: [
         "com.android.art.debug",
